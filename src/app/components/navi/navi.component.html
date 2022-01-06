@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/cars">ECommerce Project</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <button type="button" routerLink="/products" class="btn btn">Ürünler</button>
+    <button type="button" routerLink="/categories" class="btn btn">Kategoriler</button>
+   
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <app-cart-summary></app-cart-summary>   
+
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/product-add">Yeni Ürün Ekle</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>         
+          </ul>
+        </li>
+      </ul>
+    </div>
+ 
+  </div>
+
+</nav>

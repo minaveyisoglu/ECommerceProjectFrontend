@@ -1,0 +1,49 @@
+ <div class="mb-3">
+    <label for="productText" class="form-label"></label>
+    <input type="text" [(ngModel)]="productText" class="form-control" id="productText" 
+    placeholder="Ürün arayın">
+  </div>
+
+  <div *ngIf="productText" class="alert alert-success">{{ productText }} Aradınız.</div>
+  <div class="container col-md-10">
+    <div class="row">
+      <div class="example-card mt-3 me-md-3" style="width: 18rem" *ngFor="let product of products | productPipe: productText">
+        <img [src]="url + product.imagePath" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text">Ürün Adı : {{ product.productName }}</p>
+          <p class="card-text">Açıklama : {{ product.description }}</p>
+          <p class="card-text">Birim Fiyat : {{ product.unitPrice }}</p>
+          <p class="card-text">Stok : {{ product.unitsInStock }}</p>
+          <td><button (click)="addToCart(product)" 
+            type="button" class="btn btn-primary">Sepete ekle</button></td>
+        
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <!-- <table *ngIf="dataLoaded==true" class="table">
+    <thead>
+      <tr>
+        <th>Ürün adı</th>
+        <th>Fiyat</th>
+        <th>Açıklama</th>
+        <th>Görsel</th>
+        <th>Stok Adedi</th>
+        <th></th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products | productPipe:filterText">
+        <td>{{ product.productName }}</td>
+        <td>{{ product.unitPrice }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.productImages }}</td>
+        <td>{{ product.unitsInStock }}</td>
+        <td><button (click)="addToCart(product)" 
+          type="button" class="btn btn-primary">Sepete ekle</button></td>
+      </tr>
+    </tbody>
+  </table> -->
+

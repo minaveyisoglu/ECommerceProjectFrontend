@@ -1,0 +1,22 @@
+<div *ngIf="dataLoaded==true" class="row">
+    <div class="container col-md-10">
+        <div class="row">
+            <div *ngFor="let productImage of product.productImages" class="example-card mt-3 me-md-3"
+                style="width: 18rem">
+                <img *ngIf="productImage.imagePath" [src]="url + productImage.imagePath" class="card-img-top"
+                    alt="..." />
+            </div>
+        </div>
+    </div>
+    <div class="container col-md-10">
+        <div class="card-body">
+            <h5 class="card-title">{{product.description}}</h5>
+            <p class="card-text">Açıklama : {{ product.productName }}</p>
+            <p class="card-text">Stok Adeti: {{ product.unitsInStock }}</p>
+            <p class="card-text">Birim Fiyatı : {{ product.unitPrice }}</p>
+            <p class="card-text">Görsel: {{product.productImages }}</p>
+        </div>
+    </div>
+
+
+</div>
